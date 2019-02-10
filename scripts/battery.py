@@ -2,6 +2,7 @@ import psutil
 import time
 import os
 battery = psutil.sensors_battery()
+os.system ("dunstify \"Battery Monitor Script started successfully!\"")
 while True :
     percent = int(battery.percent)
     is_charging = battery.power_plugged
