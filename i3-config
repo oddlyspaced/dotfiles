@@ -34,6 +34,7 @@ exec_always ~/.config/polybar/launch.sh
 
 # autostart apps
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id python ~/dotfiles/scripts/battery.py
 
 # start a terminal
 bindsym $mod+Return exec termite
