@@ -6,3 +6,4 @@ rofi
 xed
 lxappearance
 compton
+dunst
