@@ -1,2 +1,2 @@
 #!/bin/bash
-cp config ~/.config/i3/config
+cp i3-config ~/.config/i3/config
