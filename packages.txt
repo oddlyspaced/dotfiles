@@ -5,3 +5,4 @@ termite
 rofi
 xed
 lxappearance
+compton
