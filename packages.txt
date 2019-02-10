@@ -1,0 +1,5 @@
+i3
+nitrogen
+termite
+rofi
+xed
