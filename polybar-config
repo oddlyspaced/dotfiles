@@ -1,9 +1,9 @@
 [colors]
 background = #002a546
-background-alt = #073642
+background-alt = #212121
 foreground = #FFFFFF
 foreground-alt = #555
-primary = #ffb52a
+primary = #212121
 secondary = #e60053
 alert = #bd2c40
 lol-color-1 = #ff5f5f
