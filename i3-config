@@ -29,6 +29,9 @@ font pango:Comfortaa 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# always exec apps
+exec_always ~/.config/polybar/launch.sh
+
 # autostart apps
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
