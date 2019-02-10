@@ -1,11 +1,17 @@
 [colors]
-background = #002b36
+background = #002a546
 background-alt = #073642
-foreground = #93a1a1
+foreground = #FFFFFF
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+lol-color-1 = #ff5f5f
+lol-color-2 = #ff0087
+lol-color-3 = #ff00af
+lol-color-4 = #5f5fff
+lol-color-5 = #0087ff
+lol-color-6 = #00afff
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [bar/top]
 width = 100%
@@ -13,23 +19,23 @@ height = 24
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-padding-left = 0
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
+padding-left = 2
+padding-right = 2
+module-margin-left = 2
+module-margin-right = 2
 
 font-0 = Comfortaa:pixelsize=8;2
 font-1 = UbuntuMono Nerd Font:size=10;1
 font-2 = UbuntuMono Nerd Font:size=16;4
 
-modules-left = ip wireless-network
+modules-left = ip
 modules-center = date
-modules-right = backlight pulseaudio battery
+modules-right = wireless-network battery 
 
 tray-position = right
 tray-padding = 2
 
-module-margin = 0
+module-margin = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -80,55 +86,19 @@ animation-charging-3 = "  "
 animation-charging-4 = "  "
 format-discharging = "    <label-discharging>  "
 label-discharging = "  %percentage%%  "
-format-charging-background = ${colors.background-alt}
-format-charging-prefix = %{T3}%{T-}
-format-charging-prefix-foreground = ${colors.background-alt}
-format-charging-prefix-background = ${colors.background}
-format-charging-suffix = %{T3}%{T-}
-format-charging-suffix-foreground = ${colors.background}
-format-charging-suffix-background = ${colors.background-alt}
-
-
-format-discharging-background = ${colors.background-alt}
-format-discharging-prefix = %{T3}%{T-}
-format-discharging-prefix-foreground = ${colors.background-alt}
-format-discharging-prefix-background = ${colors.background}
-format-discharging-suffix = %{T3}%{T-}
-format-discharging-suffix-foreground = ${colors.background}
-format-discharging-suffix-background = ${colors.background-alt}
-
-
-format-full-background = ${colors.background-alt}
-format-full-prefix = %{T3}%{T-}
-format-full-prefix-foreground = ${colors.background-alt}
-format-full-prefix-background = ${colors.background}
-format-full-suffix = %{T3}%{T-}
-format-full-suffix-foreground = ${colors.background}
-format-full-suffix-background = ${colors.background-alt}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/cpu]
 type = internal/cpu
 format = <label>
 label = "   %percentage%%  "
 interval = 0.5
-format-background = ${colors.background-alt}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.background-alt}
-format-prefix-background = ${colors.background}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/memory]
 type = internal/memory
 format = <label>
 label = "   %percentage_used%%  "
 interval = 3
-format-background = ${colors.background}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.background}
-format-prefix-background = ${colors.background-alt}
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = ${colors.background}
-format-suffix-background = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = true
@@ -139,56 +109,26 @@ label-muted = "   Muted  "
 ramp-volume-0 ="  "
 ramp-volume-1 ="   "
 ramp-volume-2 =" 墳"
-format-volume-prefix = %{T3} %{T-}
-format-volume-prefix-foreground = ${colors.background}
-format-volume-prefix-background = ${colors.background-alt}
-format-muted-prefix = %{T3} %{T-}
-format-muted-prefix-foreground = ${colors.background}
-format-muted-prefix-background = ${colors.background-alt}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/backlight]
 type = internal/xbacklight
 enable-scroll = true
 format = <label>
 label = "    %percentage%%"
-format-background = ${colors.background-alt}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.background-alt}
-format-prefix-background = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/wireless-network]
 type = internal/network
 format-connected =    <label-connected>
 label-connected = %essid% :  %upspeed%   %downspeed%
 interface = wlo1
-format-disconnected-suffix =%{T3}%{T-}
-format-disconnected-background = ${colors.background-alt}
-format-disconnected-suffix-foreground = ${colors.background-alt}
-format-disconnected-suffix-background = ${colors.background}
-format-disconnected-prefix = %{T3}%{T-}
-format-disconnected-prefix-foreground = ${colors.background-alt}
-format-disconnected-prefix-background = ${colors.background-alt}
-format-connected-suffix =%{T3}%{T-}
-format-connected-background = ${colors.background-alt}
-format-connected-suffix-foreground = ${colors.background-alt}
-format-connected-suffix-background = ${colors.background}
-format-connected-prefix = %{T3}%{T-}
-format-connected-prefix-foreground = ${colors.background-alt}
-format-connected-prefix-background = ${colors.background-alt}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/ip]
 type = internal/network
 interface = wlo1
-format-connected =  <label-connected>
+format-connected = "  <label-connected> "
 format-disconnected = <label-disconnected>
 label-disconnected = Not Connected
 label-connected = %local_ip%
-format-connected-suffix =%{T3}%{T-}
-format-connected-suffix-foreground = ${colors.background}
-format-connected-suffix-background = ${colors.background-alt}
-format-connected-prefix = %{T3}%{T-}
-format-connected-prefix-foreground = ${colors.background}
-format-connected-prefix-background = ${colors.background}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
@@ -256,12 +196,4 @@ date =  %A %b %e
 time = %l:%M %p
 format =   <label>
 label = %time%, %date%
-;format-background = ${colors.background-alt}
-;format-prefix = %{T3}%{T-}
-;format-prefix-foreground = ${colors.background-alt}
-;format-prefix-background = ${colors.background}
-;format-suffix = %{T3}%{T-}
-;format-suffix-foreground = ${colors.background-alt}
-;format-suffix-background = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;0
