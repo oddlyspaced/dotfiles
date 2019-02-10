@@ -1,0 +1,3 @@
+ttf-comfortaa
+ttf-ubuntu-font-family
+google-chrome
