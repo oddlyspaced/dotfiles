@@ -100,6 +100,10 @@ bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5
 bindsym XF86AudioMute exec pulseaudio-ctl mute toggle
 
+# brightness keys
+bindsym XF86MonBrightnessUp exec xbacklight + 5
+bindsym XF86MonBrightnessDown exec xbacklight - 5
+
 # focus the child container
 #bindsym $mod+d focus child
 
