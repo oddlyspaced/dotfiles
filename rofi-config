@@ -1,0 +1,21 @@
+!!!!!!!!!!
+!! rofi !!
+!!!!!!!!!!
+
+rofi.font: Comfortaa 12
+rofi.padding: 20
+rofi.line-padding: 2
+rofi.modi: combi
+rofi.combi-modi: drun,run
+rofi.show-icons: true
+rofi.drun-icon-theme: Papirus-Adapta-Nokto
+rofi.color-enabled: true
+rofi.hide-scrollbar: true
+rofi.separator-style: solid
+
+! State:           'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
+rofi.color-normal: #222D32,       #919ba0, #222D32,       #a4a4a4,       #222D32
+rofi.color-urgent: argb:00000000, #f43753, argb:00000000, argb:00000000, #e29a49
+rofi.color-active: argb:00000000, #49bbfb, argb:00000000, argb:00000000, #e29a49
+!                  'background',      'border',    'separator'
+rofi.color-window: #222D32,           #919ba0,     #222D32
