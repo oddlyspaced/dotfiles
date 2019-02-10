@@ -95,6 +95,11 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# volume keys
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5
+bindsym XF86AudioMute exec pulseaudio-ctl mute toggle
+
 # focus the child container
 #bindsym $mod+d focus child
 
