@@ -184,6 +184,5 @@ bindsym $mod+r mode "resize"
 
 # visual tweaks
 for_window [class="^.*"] border pixel 2
-
-gaps inner 5
+gaps inner 5 
 gaps outer 5
