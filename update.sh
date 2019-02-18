@@ -11,3 +11,5 @@ mkdir ~/.config/dunst
 cp dunst-config ~/.config/dunst/dunstrc
 mkdir ~/.config/rofi
 cp rofi-config ~/.config/rofi/config
+mkdir ~/.local/share/applications
+cp youtube.desktop ~/.local/share/applications
