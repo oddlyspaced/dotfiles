@@ -11,3 +11,4 @@ Please use this setup only on manjaro i3 since the config uses their own scripts
 ---
 
 _**Screenshot**_ :
+![Manjaro-i3](https://raw.githubusercontent.com/oddlyspaced/dotfiles/minimalism-manjaro/screenshot.png)
