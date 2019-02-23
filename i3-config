@@ -17,6 +17,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b; sleep 1; nm-applet
 # exec python ~/dotfiles/scripts/battery.py
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec --no-startup-id xautolock -time 10 -locker blurlock
 
 # start a terminal
 bindsym $mod+Return exec termite
@@ -192,4 +193,5 @@ mode "$mode_system" {
 
 # Lock screen
 bindsym $mod+Ctrl+l exec --no-startup-id blurlock
+
 
