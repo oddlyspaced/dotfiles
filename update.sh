@@ -1,15 +1,13 @@
 #!/bin/bash
-mkdir ~/.config/i3
+mkdir -p ~/.config/i3
 cp i3-config ~/.config/i3/config
-mkdir ~/.config/termite
+mkdir -p ~/.config/termite
 cp termite-config ~/.config/termite/config
 cp compton-config ~/.config/compton.conf
-mkdir ~/.config/polybar
+mkdir -p ~/.config/polybar
 cp polybar-config ~/.config/polybar/config
 cp polybar-launch.sh ~/.config/polybar/launch.sh
-mkdir ~/.config/dunst
+mkdir -p ~/.config/dunst
 cp dunst-config ~/.config/dunst/dunstrc
-mkdir ~/.config/rofi
+mkdir -p ~/.config/rofi
 cp rofi-config ~/.config/rofi/config
-mkdir ~/.local/share/applications
-cp youtube.desktop ~/.local/share/applications
