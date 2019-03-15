@@ -1,140 +1,47 @@
 [colors]
-background = #002a546
-background-alt = #212121
-foreground = #FFFFFF
+background = #00282a36
+background-alt = #d1c4e99
+foreground = #f8f8f2
 foreground-alt = #555
-primary = #212121
+primary = #ffb52a
 secondary = #e60053
-alert = #bd2c40
-lol-color-1 = #ff5f5f
-lol-color-2 = #ff0087
-lol-color-3 = #ff00af
-lol-color-4 = #5f5fff
-lol-color-5 = #0087ff
-lol-color-6 = #00afff
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[bar/top]
+alert = #ff5555
+
+[bar/example]
 width = 100%
 height = 24
+radius = 0.0
 fixed-center = true
+
 background = ${colors.background}
 foreground = ${colors.foreground}
-padding-left = 2
-padding-right = 2
-module-margin-left = 2
-module-margin-right = 2
 
-font-0 = Comfortaa:pixelsize=8;2
-font-1 = UbuntuMono Nerd Font:size=10;1
-font-2 = UbuntuMono Nerd Font:size=16;4
-
-modules-left = ip
-modules-center = date
-modules-right = wireless-network battery 
-
-tray-position = right
-tray-padding = 2
-
-module-margin = 2
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[bar/bottom]
-bottom = true
-width = 100%
-height = 24
-fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
 padding-left = 0
 padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
 
-font-0 = Comfortaa:pixelsize=8;2
-font-1 = UbuntuMono Nerd Font:size=10;2
-font-2 = UbuntuMono Nerd Font:size=16;3
+module-margin-left = 1
+module-margin-right = 1
 
-modules-left = bspwm i3 
-modules-center =  windowtitle
-modules-right = cpu memory
+font-0 = "Fantasque Sans Mono:pixelsize=10;2"
+font-1 = "Material Icons:pixelsize=11;2"
 
-tray-position = right
-tray-padding = 
+modules-left = i3
+modules-center = windowtitle
+modules-right = volume battery network date shutdown
+
+tray-position = none
+tray-padding = 2
+;tray-background = #0063ff
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-; #### MODULES ####
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/windowtitle]
-type = internal/xwindow
-format = <label>
-label = %title%
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/battery]
-type = internal/battery
-format-charging = <animation-charging>  <label-charging>
-format-full = <label-full>
-label-charging = "  %percentage%% Charged  "
-label-full = "  Fully charged  "
-animation-charging-0 = "  "
-animation-charging-1 = "  "
-animation-charging-2 = "  "
-animation-charging-3 = "  "
-animation-charging-4 = "  "
-format-discharging = "    <label-discharging>  "
-label-discharging = "  %percentage%%  "
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/cpu]
-type = internal/cpu
-format = <label>
-label = "   %percentage%%  "
-interval = 0.5
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/memory]
-type = internal/memory
-format = <label>
-label = "   %percentage_used%%  "
-interval = 3
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/pulseaudio]
-type = internal/pulseaudio
-use-ui-max = true
-interval = 5
-format-volume = "<ramp-volume> <label-volume>  "
-format-muted = <label-muted>
-label-muted = "   Muted  "
-ramp-volume-0 ="  "
-ramp-volume-1 ="   "
-ramp-volume-2 =" 墳"
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/backlight]
-type = internal/xbacklight
-enable-scroll = true
-format = <label>
-label = "    %percentage%%"
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/wireless-network]
-type = internal/network
-format-connected =    <label-connected>
-label-connected = %essid% :  %upspeed%   %downspeed%
-interface = wlo1
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/ip]
-type = internal/network
-interface = wlo1
-format-connected = "  <label-connected> "
-format-disconnected = <label-disconnected>
-label-disconnected = Not Connected
-label-connected = %local_ip%
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = #6272a4
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -151,7 +58,7 @@ label-empty-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -188,12 +95,106 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 ; Separator in between workspaces
 ; label-separator = |
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/windowtitle]
+type = internal/xwindow
+format = <label>
+label = %title%
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/volume]
+type = internal/pulseaudio
+format-volume =  "<ramp-volume> <label-volume> "
+ramp-volume-0 =""
+ramp-volume-0-font = 2
+ramp-volume-1 = ""
+ramp-volume-1-font = 2
+ramp-volume-2 =" "
+ramp-volume-2-font = 2
+format-volume-background = #ffb86c
+format-volume-foreground = #000
+
+format-muted = <label-muted>
+format-muted-background = #ffb86c
+format-muted-foreground = #000
+label-muted ="  "
+format-muted-font = 2
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 100
+
+format-charging = <label-charging>
+format-charging-prefix = " "
+format-charging-prefix-font = 2
+label-charging = "%percentage%%  " 
+
+format-discharging = <label-discharging>
+label-discharging = "%percentage%% "
+format-discharging-prefix = " "
+format-discharging-prefix-font = 2
+
+format-discharging-background = #ff5555
+format-discharging-foreground = #000
+
+label-full = 
+format-full-background = #ff5555
+format-full-foreground = #000
+format-full-prefix-font = 1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/network]
+type = internal/network
+interface = wlo1
+format-connected = <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-font = 2
+label-connected = " %essid%%downspeed:9% "
+label-connected-font = 1
+
+format-disconnected = <label-disconnected>
+label-disconnected = 
+label-disconnected-font = 2
+
+format-connected-background = #8be9fd
+format-connected-foreground = #000
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/date]
 type = internal/date
-interval = 1.0
-date =  %A %b %e
-time = %l:%M %p
-format =   <label>
-label = %time%, %date%
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;0
+interval = 1
+
+date = 
+date-alt = "%A, %b %d"
+
+time = "%I:%M %p "
+time-alt = "%I:%M:%S %p "
+
+format-prefix = " "
+format-prefix-font = 2
+format-prefix-foreground = #000
+format-background = #ff79c6
+format-foreground = #000
+
+label = %date% %time%
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/shutdown]
+type = custom/text
+content = 
+content-background = #ad1457
+content-padding = 2
+click-left = dunstify "left"
+click-right = dunstify "right"
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
