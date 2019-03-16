@@ -29,7 +29,7 @@ modules-left = i3
 modules-center = windowtitle
 modules-right = volume battery network date shutdown
 
-tray-position = none
+tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
@@ -100,6 +100,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 type = internal/xwindow
 format = <label>
 label = %title%
+label-maxlen = 40
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/volume]
 type = internal/pulseaudio
@@ -137,6 +138,9 @@ format-discharging-prefix-font = 2
 
 format-discharging-background = #ff5555
 format-discharging-foreground = #000
+
+format-charging-background = #ff5555
+format-charging-foreground = #000
 
 label-full = 
 format-full-background = #ff5555
