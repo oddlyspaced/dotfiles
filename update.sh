@@ -11,3 +11,6 @@ mkdir -p ~/.config/dunst
 cp dunst-config ~/.config/dunst/dunstrc
 mkdir -p ~/.config/rofi
 cp rofi-config ~/.config/rofi/config
+mkdir -p ~/.config/conky
+cp conky-info ~/.config/conky/info
+cp conky-start.sh ~/.config/conky/start.sh

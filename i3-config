@@ -219,7 +219,7 @@ bindsym $mod+0 exec --no-startup-id blurlock
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
-exec --no-startup-id ~/.config/conky/start.sh
+exec_always --no-startup-id ~/.config/conky/start.sh
 exec --no-startup-id pulseaudio
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
