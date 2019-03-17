@@ -186,8 +186,8 @@ type = custom/text
 content = 
 content-background = #ad1457
 content-padding = 2
-click-left = dunstify "left"
-click-right = dunstify "right"
+click-left = systemctl hibernate
+click-right = systemctl reboot
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [settings]
 screenchange-reload = true
