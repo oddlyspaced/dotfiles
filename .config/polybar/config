@@ -24,7 +24,7 @@ font-2 = UbuntuMono Nerd Font:size=16;4
 
 modules-left = ip wireless-network
 modules-center = date
-modules-right = weather backlight pulseaudio battery
+modules-right = weather backlight pulseaudio battery shutdown-text
 
 tray-position = none
 tray-padding = 2
@@ -87,9 +87,9 @@ format-charging-foreground = #212121
 format-charging-prefix = %{T3}%{T-}
 format-charging-prefix-foreground = #ff79c6
 format-charging-prefix-background = #6272a4		
-format-charging-suffix = %{T3}%{T-}
-format-charging-suffix-foreground = #ff79c6
-format-charging-suffix-background = #ff79c6
+;format-charging-suffix = %{T3}%{T-}
+;format-charging-suffix-foreground = #ff79c6
+;format-charging-suffix-background = #ff79c6
 
 
 format-discharging-background = #ff79c6
@@ -97,18 +97,18 @@ format-discharging-foreground = #212121
 format-discharging-prefix = %{T3}%{T-}
 format-discharging-prefix-foreground = #ff79c6
 format-discharging-prefix-background = #6272a4		
-format-discharging-suffix = %{T3}%{T-}
-format-discharging-suffix-foreground = #ff79c6
-format-discharging-suffix-background = #ff79c6
+;format-discharging-suffix = %{T3}%{T-}
+;format-discharging-suffix-foreground = #ff79c6
+;format-discharging-suffix-background = #ff79c6
 
 format-full-background = #ff79c6
 format-full-foreground = #212121
 format-full-prefix = %{T3}%{T-}
 format-full-prefix-foreground = #ff79c6
 format-full-prefix-background = #6272a4		
-format-full-suffix = %{T3}%{T-}
-format-full-suffix-foreground = #ff79c6
-format-full-suffix-background = #ff79c6	
+;format-full-suffix = %{T3}%{T-}
+;format-full-suffix-foreground = #ff79c6
+;format-full-suffix-background = #ff79c6	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/cpu]
 type = internal/cpu
@@ -289,3 +289,51 @@ format-foreground = #212121
 format-prefix = %{T3}%{T-}
 format-prefix-foreground = #ffb86c	
 format-prefix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/shutdown-text]
+type = custom/menu
+expand-right = true
+
+menu-0-0 = Shutdown
+menu-0-0-exec = systemctl poweroff
+menu-0-1 = Hibernate
+menu-0-1-exec = systemctl hibernate
+menu-0-2 = Reboot
+menu-0-2-exec = systemctl reboot
+menu-0-3 = Log out
+menu-0-3-exec = i3-msg exit
+
+label-open = "        "
+format-background = #f44336
+format-foreground = #f5f5f5
+format-prefix = %{T3}%{T-}
+format-prefix-background = #ff79c6
+format-prefix-foreground = #f44336
+
+label-close = " X "
+
+label-separator = "  "
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/shutdown-icons]
+type = custom/menu
+expand-right = true
+
+menu-0-0 = ⏻
+menu-0-0-exec = systemctl poweroff
+menu-0-1 = ⏾
+menu-0-1-exec = systemctl hibernate
+menu-0-2 = ﰇ
+menu-0-2-exec = systemctl reboot
+menu-0-3 = 
+menu-0-3-exec = i3-msg exit
+
+label-open = "        "
+format-background = #f44336
+format-foreground = #f5f5f5
+format-prefix = %{T3}%{T-}
+format-prefix-background = #ff79c6
+format-prefix-foreground = #f44336
+
+label-close = " X "
+
+label-separator = "  "
