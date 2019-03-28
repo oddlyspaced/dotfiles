@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Installing packages..."
-sudo pacman -S conky termite nitrogen papirus-icon-theme
-yay -S polybar compton-tryone-git ttf-comfortaa nerd-fonts-ubuntu-mono ttf-google-sans ant-dracula-gtk-theme i3lock-fancy-git
+sudo pacman -S conky termite nitrogen papirus-icon-theme scrot xorg-xbacklight
+yay -S polybar compton-tryone-git ttf-comfortaa nerd-fonts-ubuntu-mono ttf-google-sans ant-dracula-gtk-theme i3lock-fancy-git pulseaudio-ctl
 nitrogen --set-zoom-fill wallpaper.jpg
 
 echo "Setting configs..."
