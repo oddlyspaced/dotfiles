@@ -2,6 +2,8 @@
 #allow_bold = true
 #audible_bell = false
 #bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
 font = Ubuntu Mono 9
@@ -39,44 +41,38 @@ scrollback_lines = 10000
 #scrollbar = off
 
 [colors]
+# If both of these are unset, cursor falls back to the foreground color,
+# and cursor_foreground falls back to the background color.
+#cursor = #dcdccc
+#cursor_foreground = #dcdccc
 
-# special
-foreground      = #f8f8f2
-foreground_bold = #f8f8f2
-cursor          = #f8f8f2
-background      = #282a36
+foreground = #dda4a9
+#foreground_bold = #ffffff
+background = #0b0a18
 
-# black
-color0  = #000000
-color8  = #4d4d4d
+# 20% background transparency (requires a compositor)
+#background = rgba(63, 63, 63, 0.8)
 
-# red
-color1  = #ff5555
-color9  = #ff6e67
+# If unset, will reverse foreground and background
+highlight = #2f2f2f
 
-# green
-color2  = #50fa7b
-color10 = #5af78e
-
-# yellow
-color3  = #f1fa8c
-color11 = #f4f99d
-
-# blue
-color4  = #bd93f9
-color12 = #caa9fa
-
-# magenta
-color5  = #ff79c6
-color13 = #ff92d0
-
-# cyan
-color6  = #8be9fd
-color14 = #9aedfe
-
-# white
-color7  = #bfbfbf
-color15 = #e6e6e6
+# Colors from color0 to color254 can be set
+color0 = #0b0a18
+color1 = #5D284F
+color2 = #5A475F
+color3 = #9B0830
+color4 = #E2122E
+color5 = #9B2551
+color6 = #E0254C
+color7 = #dda4a9
+color8 = #9a7276
+color9 = #5D284F
+color10 = #5A475F
+color11 = #9B0830
+color12 = #E2122E
+color13 = #9B2551
+color14 = #E0254C
+color15 = #dda4a9
 
 [hints]
 #font = Monospace 12

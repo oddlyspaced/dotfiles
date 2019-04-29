@@ -1,8 +1,8 @@
 [colors]
-background = #282a36
-background-alt = #073642
-foreground = #93a1a1
-foreground-alt = #555
+background = #0b0a18
+background-alt = #0B0A18
+foreground = #DDA4A9
+foreground-alt = #DDA4A9
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -66,7 +66,7 @@ cursor-scroll = ns-resize
 type = internal/xwindow
 format = <label>
 label = %title%
-format-foreground = #f5f5f5
+format-foreground = #dda4a9
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]
 type = internal/battery
@@ -82,30 +82,30 @@ animation-charging-4 = "  "
 format-discharging = "    <label-discharging>"
 label-discharging = "  %percentage%%"
 
-format-charging-background = #ff79c6
+format-charging-background = #E0254C
 format-charging-foreground = #212121
 format-charging-prefix = %{T3}%{T-}
-format-charging-prefix-foreground = #ff79c6
-format-charging-prefix-background = #6272a4		
+format-charging-prefix-foreground = #E0254C
+format-charging-prefix-background = #5D284F
 ;format-charging-suffix = %{T3}%{T-}
-;format-charging-suffix-foreground = #ff79c6
-;format-charging-suffix-background = #ff79c6
+;format-charging-suffix-foreground = #E0254C
+;format-charging-suffix-background = #E0254C
 
 
-format-discharging-background = #ff79c6
+format-discharging-background = E0254C
 format-discharging-foreground = #212121
 format-discharging-prefix = %{T3}%{T-}
-format-discharging-prefix-foreground = #ff79c6
-format-discharging-prefix-background = #6272a4		
+format-discharging-prefix-foreground = #E0254C
+format-discharging-prefix-background = #5D284F
 ;format-discharging-suffix = %{T3}%{T-}
-;format-discharging-suffix-foreground = #ff79c6
-;format-discharging-suffix-background = #ff79c6
+;format-discharging-suffix-foreground = #E0254C
+;format-discharging-suffix-background = #E0254C
 
-format-full-background = #ff79c6
+format-full-background = #E0254C
 format-full-foreground = #212121
 format-full-prefix = %{T3}%{T-}
-format-full-prefix-foreground = #ff79c6
-format-full-prefix-background = #6272a4		
+format-full-prefix-foreground = #E0254C
+format-full-prefix-background = #5D284F		
 ;format-full-suffix = %{T3}%{T-}
 ;format-full-suffix-foreground = #ff79c6
 ;format-full-suffix-background = #ff79c6	
@@ -126,14 +126,14 @@ type = internal/memory
 format = <label>
 label = "   %percentage_used%%  "
 interval = 3
-format-background = #50fa7b	
-format-foreground = #212121
+format-background = #9B2551	
+format-foreground = #dda4a9
 format-prefix = %{T3}%{T-}
-format-prefix-foreground = #50fa7b	
+format-prefix-foreground = #9B2551
 format-prefix-background = #44475a	
 format-suffix = %{T3}%{T-}
-format-suffix-foreground = #282a36
-format-suffix-background = #50fa7b
+format-suffix-foreground = #0b0a18
+format-suffix-background = #9B2551
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -145,27 +145,27 @@ label-muted = "   Muted  "
 ramp-volume-0 ="  "
 ramp-volume-1 ="   "
 ramp-volume-2 =" 墳"
-format-volume-background = #6272a4
-format-volume-foreground = #f8f8f8
+format-volume-background = #5D284F
+format-volume-foreground = #dda4a9
 format-volume-prefix = %{T3} %{T-}
-format-volume-prefix-foreground = #6272a4	
-format-volume-prefix-background = #f1fa8c	
+format-volume-prefix-foreground = #5D284F	
+format-volume-prefix-background = #0b0a18
 format-muted-prefix = %{T3} %{T-}
-format-muted-background = #6272a4
+format-muted-background = #5D284F
 format-muted-foreground = #f8f8f8
-format-muted-prefix-foreground = #6272a4	
-format-muted-prefix-background = #f1fa8c	
+format-muted-prefix-foreground = #5D284F	
+format-muted-prefix-background = #0b0a18
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/backlight]
 type = internal/xbacklight
 enable-scroll = true
 format = <label>
 label = "    %percentage%%"
-format-background = #f1fa8c
-format-foreground = #212121
+format-background = #0b0a18
+format-foreground = #dda4a9
 format-prefix = %{T3}%{T-}
-format-prefix-foreground = #f1fa8c	
-format-prefix-background = #ffb86c	
+format-prefix-foreground = #0b0a18
+format-prefix-background = #dda4a9
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/wireless-network]
 type = internal/network
@@ -173,20 +173,20 @@ format-connected =    <label-connected>
 label-connected = %essid% :  %upspeed%   %downspeed%
 interface = wlo1
 format-disconnected-suffix =%{T3}%{T-}
-format-disconnected-background = #ff5555
+format-disconnected-background = #9B0830
 format-disconnected-suffix-foreground = ${colors.background-alt}
-format-disconnected-suffix-background = #ff5555	
+format-disconnected-suffix-background = #9B0830	
 format-disconnected-prefix = %{T3}%{T-}
 format-disconnected-prefix-foreground = ${colors.background-alt}
 format-disconnected-prefix-background = ${colors.background-alt}
 format-connected-suffix =%{T3}%{T-}
-format-connected-background = #ff5555
-format-connected-foreground = #212121
-format-connected-suffix-foreground = #ff5555
-format-connected-suffix-background = 282a36
+format-connected-background = #9B0830
+format-connected-foreground = #dda4a9
+format-connected-suffix-foreground = #9B0830
+format-connected-suffix-background = #0b0a18
 format-connected-prefix = %{T3}%{T-}
-format-connected-prefix-foreground = #ff5555	
-format-connected-prefix-background = #ff5555	
+format-connected-prefix-foreground = #9B0830
+format-connected-prefix-background = #9B0830
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/ip]
 type = internal/network
@@ -195,14 +195,14 @@ format-connected =  <label-connected>
 format-disconnected = <label-disconnected>
 label-disconnected = Not Connected
 label-connected = %local_ip%
-format-connected-background = #bd93f9	
-format-connected-foreground = #212121
+format-connected-background = #5A475F	
+format-connected-foreground = #dda4a9
 format-connected-suffix =%{T3}%{T-}
-format-connected-suffix-foreground = #bd93f9
-format-connected-suffix-background = #ff5555
+format-connected-suffix-foreground = #5A475F
+format-connected-suffix-background = #9B0830
 format-connected-prefix = %{T3}%{T-}
-format-connected-prefix-foreground = #bd93f9
-format-connected-prefix-background = #bd93f9
+format-connected-prefix-foreground = #5A475F
+format-connected-prefix-background = #5A475F
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
@@ -241,7 +241,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #8be9fd	
+label-focused-background = #dda4a9
 label-focused-foreground = #212121
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
@@ -271,7 +271,7 @@ date =  %A %b %e
 time = %l:%M %p
 format =   <label>
 label = %time%, %date%
-format-foreground = #f8f8f2
+format-foreground = #dda4a9
 ;format-background = ${colors.background-alt}
 ;format-prefix = %{T3}%{T-}
 ;format-prefix-foreground = ${colors.background-alt}
@@ -282,12 +282,12 @@ format-foreground = #f8f8f2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/weather]
 type = custom/script
-exec = python ~/.config/polybar/scripts/weather.py
+exec = python ~/.scripts/polybar/weather.py
 interval = 90
-format-background = #ffb86c	
+format-background = #dda4a9
 format-foreground = #212121
 format-prefix = %{T3}%{T-}
-format-prefix-foreground = #ffb86c	
+format-prefix-foreground = #dda4a9	
 format-prefix-background = ${colors.background}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/shutdown-text]
@@ -304,11 +304,11 @@ menu-0-3 = Log out
 menu-0-3-exec = i3-msg exit
 
 label-open = "        "
-format-background = #f44336
-format-foreground = #f5f5f5
+format-background = #0b0a18
+format-foreground = #dda4a9
 format-prefix = %{T3}%{T-}
-format-prefix-background = #ff79c6
-format-prefix-foreground = #f44336
+format-prefix-background = #E0254C
+format-prefix-foreground = #0b0a18
 
 label-close = " X "
 
@@ -328,11 +328,11 @@ menu-0-3 = 
 menu-0-3-exec = i3-msg exit
 
 label-open = "        "
-format-background = #f44336
-format-foreground = #f5f5f5
+format-background = #0b0a18
+format-foreground = #dda4a9
 format-prefix = %{T3}%{T-}
-format-prefix-background = #ff79c6
-format-prefix-foreground = #f44336
+format-prefix-background = #0b0a18
+format-prefix-foreground = #dda4a9
 
 label-close = " X "
 
