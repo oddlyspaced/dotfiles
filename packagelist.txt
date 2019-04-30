@@ -1,0 +1,16 @@
+Arch Package List :
+i3
+tt-ubuntu-font-family 
+rofi
+termite
+scrot
+conky
+dunst
+
+Aur Packages :
+polybar
+ttf-comfortaa
+ttf-google-sans
+nerd-fonts-ubuntu-mono
+i3fancy-lock-git
+pulseaudio-ctl
