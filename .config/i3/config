@@ -54,7 +54,7 @@ bindsym XF86MonBrightnessUp exec xbacklight + 5
 bindsym XF86MonBrightnessDown exec xbacklight - 5
 
 # print
-bindsym Print exec --no-startup-id cd Pictures && scrot && dunstify "Screenshot Taken"
+bindsym Print exec --no-startup-id cd ~/Pictures/Screenshots && scrot && dunstify "Screenshot Taken"
 
 # lock
 bindsym $mod+ctrl+l exec --no-startup-id i3lock-fancy -f Google-Sans-Regular
@@ -164,24 +164,17 @@ bindsym $mod+r mode "resize"
 
 ##############################################
 # Autostart
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nm-applet
-exec --no-startup-id pulseaudio
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id cd ~/.config/polybar && bash launch.sh
-exec --no-startup-id cd .config/conky && conky -c info
-
+exec --no-startup-id ~/.scripts/i3/start.sh
+exec_always --no-startup-id ~/.scripts/i3/refresh.sh
 ###############################################
 # visual tweaks and stuff
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #282a36 #44475a #f8f8f2 #FDF6E3
-  client.focused_inactive #282a36 #282a36 #f8f8f2 #454948
-  client.unfocused        #282a36 #282a36 #f8f8f2 #454948
-  client.urgent           #CB4B16 #FDF6E3 #f8f8f2 #268BD2
+  client.focused          #0b0a18 #0b0a18 #dda4a9 #FDF6E3
+  client.focused_inactive #282a36 #282a36 #dda4a9 #454948
+  client.unfocused        #282a36 #282a36 #dda4a9 #454948
+  client.urgent           #CB4B16 #FDF6E3 #dda4a9 #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
   client.background       #2B2C2B
@@ -205,7 +198,7 @@ bindsym $mod+i border normal
 #############################
 
 # Set inner/outer gaps
-gaps inner 14
+gaps inner 8
 gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.

@@ -1,0 +1,15 @@
+!!!!!!!!!!
+!! rofi !!
+!!!!!!!!!!
+
+rofi.font: Comfortaa 9
+rofi.padding: 20
+rofi.line-padding: 2
+rofi.modi: combi
+rofi.combi-modi: drun,run
+rofi.show-icons: true
+rofi.drun-icon-theme: Papirus-Adapta-Nokto
+rofi.color-enabled: true
+rofi.hide-scrollbar: true
+rofi.separator-style: solid
+rofi.theme: ~/.config/rofi/colors-rofi-dark.rasi
