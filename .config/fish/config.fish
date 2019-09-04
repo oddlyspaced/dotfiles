@@ -1,0 +1,1 @@
+ufetch | lolcat
