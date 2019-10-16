@@ -24,7 +24,7 @@ font-2 = UbuntuMono Nerd Font:size=16;4
 
 modules-left = ip wireless-network
 modules-center = date
-modules-right = weather backlight pulseaudio battery shutdown-text
+modules-right = weather pulseaudio battery shutdown-text
 
 tray-position = none
 tray-padding = 2
@@ -154,7 +154,7 @@ format-muted-prefix = %{T3} %{T-}
 format-muted-background = #6272a4
 format-muted-foreground = #f8f8f8
 format-muted-prefix-foreground = #6272a4	
-format-muted-prefix-background = #f1fa8c	
+format-muted-prefix-background = #ffb86c	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/backlight]
 type = internal/xbacklight
@@ -171,7 +171,7 @@ format-prefix-background = #ffb86c
 type = internal/network
 format-connected =    <label-connected>
 label-connected = %essid% :  %upspeed%   %downspeed%
-interface = wlo1
+interface = wlp1s0
 format-disconnected-suffix =%{T3}%{T-}
 format-disconnected-background = #ff5555
 format-disconnected-suffix-foreground = ${colors.background-alt}
@@ -190,7 +190,7 @@ format-connected-prefix-background = #ff5555
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/ip]
 type = internal/network
-interface = wlo1
+interface = wlp1s0
 format-connected =  <label-connected>
 format-disconnected = <label-disconnected>
 label-disconnected = Not Connected
@@ -282,7 +282,7 @@ format-foreground = #f8f8f2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/weather]
 type = custom/script
-exec = python ~/.config/polybar/scripts/weather.py
+exec = python3 ~/.config/polybar/scripts/weather.py
 interval = 90
 format-background = #ffb86c	
 format-foreground = #212121
