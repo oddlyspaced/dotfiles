@@ -50,14 +50,14 @@ bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5
 bindsym XF86AudioMute exec pulseaudio-ctl mute toggle
 
 # brightness keys
-bindsym XF86MonBrightnessUp exec xbacklight + 5
-bindsym XF86MonBrightnessDown exec xbacklight - 5
+bindsym XF86MonBrightnessUp exec sudo /home/hardik/.scripts/backlight/backlight.py +5
+bindsym XF86MonBrightnessDown exec sudo /home/hardik/.scripts/backlight/backlight.py -5
 
 # print
 bindsym Print exec --no-startup-id cd ~/Pictures/Screenshots && scrot && dunstify "Screenshot Taken"
 
 # lock
-bindsym $mod+ctrl+l exec --no-startup-id i3lock-fancy -f Google-Sans-Regular
+bindsym $mod+ctrl+l exec --no-startup-id i3lock-fancy -f Comfortaa
 
 # hibernate
 bindsym $mod+ctrl+h exec --no-startup-id bash ~/.config/i3/scripts/hibernate.sh
@@ -169,6 +169,7 @@ exec_always --no-startup-id ~/.scripts/i3/refresh.sh
 ###############################################
 # visual tweaks and stuff
 
+
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
   client.focused          #0b0a18 #0b0a18 #dda4a9 #FDF6E3
@@ -180,8 +181,9 @@ exec_always --no-startup-id ~/.scripts/i3/refresh.sh
   client.background       #2B2C2B
 
 
+
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel 2
 new_float normal
 
 # Hide borders
@@ -189,7 +191,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+y border none
-bindsym $mod+u border pixel 1
+bindsym $mod+u border pixel 2
 bindsym $mod+i border normal
 
 
@@ -211,7 +213,7 @@ smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+# smart_borders off
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
