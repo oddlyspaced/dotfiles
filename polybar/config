@@ -1,0 +1,233 @@
+[bar/bottom]
+bottom = true
+fixed-center = true
+width = 100%
+height = 30
+background = #0e151d
+foreground = #eeeeee
+radius = 5
+border-size=5
+padding-right = 4
+module-margin = 1
+font-0 = Fantasque Sans Mono:size=9;1.5
+font-1 = FontAwesome5Free:style=Solid:size=9;2
+
+modules-left = i3 sep windowtitle
+modules-center =
+modules-right = spotify sep memory sep cpu sep wired-network wireless-network sep pulseaudio sep battery sep date
+
+separator =
+
+; This value is used to add extra spacing between elements
+; @deprecated: This parameter will be removed in an upcoming version
+spacing = 0
+
+; Opacity value between 0.0 and 1.0 used on fade in/out
+dim-value = 1.0
+
+wm-name = i3
+tray-position = right
+tray-detached = false
+tray-maxsize = 16
+tray-transparent = false
+
+tray-background = #0e151d
+
+tray-offset-x = 0
+tray-offset-y = 0
+
+; Pad the sides of each tray icon
+tray-padding =
+
+; Scale factor for tray clients
+tray-scale = 1.0
+dpi-x = 96
+dpi-y = 96
+
+; Enable support for inter-process messaging
+; See the Messaging wiki page for more details.
+enable-ipc = false
+
+; Fallback click handlers that will be called if
+; there's no matching module handler found.
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+label-unfocused = %index%
+label-unfocused-padding = 2
+label-unfocused-foreground = #eeeeee
+
+label-focused = %index%
+label-focused-foreground = #eeeeee
+label-focused-background = #233446
+label-focused-underline = #fba922
+label-focused-padding = 2
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1.0
+
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = %Y-%m-%d%
+
+; Optional time format
+time = %l:%M %p
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+
+label = %date% %time% 
+label-font = 0
+label-foreground = #eeeeee
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/wired-network]
+type = internal/network
+interface = enp2s0
+format-connected =    <label-connected>
+label-connected =  %upspeed%   %downspeed%
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+label-foreground = #63be8b
+format-prefix-foreground = #63be8b
+exec = python ~/.config/spotify_status.py -f '{artist} - {song}'
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+label =  %percentage%%
+
+label-foreground = #4a7fa9
+label-padding-right = 1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/memory]
+type = internal/memory
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+format = <label>
+
+label =  %gb_used%
+
+label-foreground = #888ba5
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+format-volume = "<ramp-volume> <label-volume>  "
+format-muted = <label-muted>
+label-muted = "   Muted  "
+ramp-volume-0 =""
+ramp-volume-1 =""
+ramp-volume-2 =""
+format-volume-foreground = #41a991
+format-muted-foreground = #41a991
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/wireless-network]
+type = internal/network
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid% :  %upspeed%   %downspeed%
+interface = wlp1s0
+
+label-connected-foreground = #63be8b
+
+format-disconnected = <label-disconnected>
+label-disconnected = Not connected
+label-disconnected-foreground = #BF616A
+
+ramp-signal-foreground = #63be8b
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/decor-glyph]
+type = custom/text
+content-foreground = #233446
+margin = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/battery]
+type = internal/battery
+format-charging = <animation-charging> <label-charging>
+format-full = <label-full>
+label-charging = "  %percentage%% Charged  "
+label-full = "  Fully charged  "
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+format-discharging = "    <label-discharging>"
+label-discharging = "  %percentage%%"
+
+format-charging-foreground = #edc06a
+format-discharging-foreground = #edc06a
+format-full-foreground = #edc06a
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/windowtitle]
+type = internal/xwindow
+format = <label>
+label = %title%
+format-foreground = #FFFFFF
+label-maxlen = 50
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/sep]
+inherit = module/decor-glyph
+content = "/"
